@@ -1,28 +1,36 @@
 //Sieve of Eratosthenes algorithm for generate n prime numbers
 //the file can't be run directly because of the inappropriate file name
 import java.util.Arrays;
-class Main {
+
+public class PrimeSieve {
+
     public static void main(String[] args) {
-        int n=100;
-       boolean[] isprime=sieve(n);
-       System.out.println("all prime numbers in 100");
-       for(int i=2;i<=n;i++){
-           if(isprime[i]){
-               System.out.println(i+"");
-           }
-       }
-       
-    }
-    public static boolean[] sieve(int n){
-        boolean isprime[]=new boolean[n+1];
-        Arrays.fill(isprime,true);
-        isprime[0]=false;
-        isprime[1]=false;
-        for(int i=2;i<=n;i++){
-            for(int j=i*i;i<=n;j+=i){
-                isprime[j]=false;
+        int n = 100;  // Find all primes ≤ 100
+        boolean[] isPrime = sieve(n);
+
+        System.out.println("Prime numbers up to " + n + ":");
+        for (int i = 2; i <= n; i++) {
+            if (isPrime[i]) {
+                System.out.print(i + " ");
             }
         }
-        return isprime;
+    }
+
+    public static boolean[] sieve(int n) {
+        boolean[] isPrime = new boolean[n + 1];
+        Arrays.fill(isPrime, true);  // Assume all are prime
+        isPrime[0] = false;
+        isPrime[1] = false;
+
+        for (int i = 2; i * i <= n; i++) {
+            if (isPrime[i]) {
+                // Mark multiples of i as non-prime
+                for (int j = i * i; j <= n; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+
+        return isPrime;
     }
 }
