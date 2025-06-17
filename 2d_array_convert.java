@@ -1,4 +1,5 @@
 //For convert text matrics to 2d array
+//the file can't be run directly because of the inappropriate file name
 class Main {
     public static void main(String[] args) {
         String numbers =
