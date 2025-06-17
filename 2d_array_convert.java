@@ -1,5 +1,6 @@
 //For convert text matrics to 2d array
 //the file can't be run directly because of the inappropriate file name
+//this will help for project euler problems that looks like leetcode
 class Main {
     public static void main(String[] args) {
         String numbers =
