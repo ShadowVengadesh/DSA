@@ -1,4 +1,5 @@
 //efficient diviser counter code
+//the file can't be run directly it requires some changes
 public static int countDivisors(long number) {
     int count = 0;
     long sqrt = (long) Math.sqrt(number);
